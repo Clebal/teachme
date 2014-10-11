@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'fontawesome';
+    src:url('../fonts/fontawesome-webfont.eot');
+    src:url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/fontawesome-webfont.svg#fontawesome') format('svg'),
+        url('../fonts/fontawesome-webfont.woff') format('woff'),
+        url('../fonts/fontawesome-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cbp-vimenu {
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    box-shadow: 0px 0px 5px #ddd;
+}
+
+.cbp-vimenu li a {
+
+    display: block;
+    text-indent: -500em;
+    height: 5em;
+    width: 5em;
+    line-height: 5em;
+    text-align: center;
+    color: rgba(102, 102, 102, 1);
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    -webkit-transition: background 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+    fill: white;
+}
+
+.block{
+
+    display: block;
+
+}
+
+.cbp-vimenu li a:hover,
+.cbp-vimenu li:first-child a{
+    background: #1A9EE2;
+    color: #fff;
+}
+
+/* class for current item */
+.cbp-vimenu li.cbp-vicurrent a {
+    background: #fff;
+    color: #1A9EE2;
+}
+
+.cbp-vimenu li a:before {
+    font-family: 'fontawesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    text-indent: 0em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4em;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cbp-vimenu li a.icon-logo:before {
+    content: "TM";
+    font-weight: 700;
+    font-size: 200%;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    margin-left: -1px;
+}
+
+.icon-search:before {
+    content: "\f002;";
+}
+
+.icon-doc:before {
+    content: "\e001";
+}
+
+.icon-book:before {
+    content: "\f02d";
+}
+
+.icon-micro:before {
+    content: "\f130";
+}
+
+.icon-ask2:before {
+    content: "\f128";
+}
+
+.icon-smile:before {
+    content: "\f118";
+}
+
+.icon-sad:before {
+    content: "\f118";
+}
+
+.icon-unlike:before {
+    content: "\f088";
+}
+
+.icon-like:before {
+    content: "\f087";
+}
+
+.icon-camera2:before {
+    content: "\f083";
+}
+
+.icon-calendar:before {
+    content: "\f073";
+}
+
+.icon-ask:before {
+    content: "\f059";
+}
+
+.icon-write2:before {
+    content: "\f044";
+}
+
+.icon-write:before {
+    content: "\f040";
+}
+
+.icon-camera:before {
+    content: "\f030";
+}
+
+.icon-music:before {
+    content: "\f025";
+}
+
+.icon-horario:before {
+    content: "\f017";
+}
+
+.icon-heart:before {
+    content: "\f004";
+}
+
+.icon-user:before {
+    content: "\f007";
+}
+
+.icon-download:before {
+    content: "\e006";
+}
+
+.icon-location:before {
+    content: "\e007";
+}
+
+.icon-images:before {
+    content: "\e009";
+}
+
+.icon-pencil:before {
+    content: "\e008";
+}
+
+/* Example for media query (depends on total height of menu) */
+@media screen and (max-height: 34.9375em) { 
+
+    .cbp-vimenu {
+        font-size: 70%;
+    }
+
+}
+
+@media screen and (max-width: 785px) { 
+
+    .cbp-vimenu {
+        font-size: 70%;
+    }
+
+}
+

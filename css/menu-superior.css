@@ -1,0 +1,163 @@
+#menu-superior{
+    width: 100%;
+    /* margin: 2em auto; */
+    background: #f6f6f6;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    /* margin-left: 80px; */
+    margin-top: -16px;
+    height: 56px;
+}
+
+.user-avatar img {
+    -moz-border-radius: 4em / 4em;
+    -webkit-border-radius: 4em 4em;
+    border-radius: 4em / 4em;
+    float: left;
+    margin-left: 1.5em;
+    margin-top: 0.8em;
+}
+
+.icon-reorder {
+    padding: .8em 1em;
+    color: white;
+    float: right;
+    height: 56px;
+}
+
+.icon-reorder:before {
+    content: "";
+}
+
+
+.drop {
+    position: relative;
+    font-size: 1em;
+    cursor: pointer;
+}
+.drop a {
+    line-height: 2.8em;
+    padding: 0 1em;
+    font-size: 20px;
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: .4em solid transparent;
+    border-right: .4em solid transparent;
+    border-top: .4em solid #ffb135;
+    left: 100%;
+    margin-left: -1.6em;
+    margin-top: 1px;
+    opacity: 0;
+}
+
+.dropdownContain {
+    width: 13em;
+    position: absolute;
+    z-index: 2;
+    left: 53%;
+    margin-left: -6.5em;
+    /* half of width */
+    top: -300px;
+    margin-top: 15px;
+}
+
+.dropOut {
+    width: 13em;
+    background: #f6f6f6;
+    float: left;
+    position: relative;
+    margin-top: 0;
+    opacity: 0;
+    -moz-border-radius: 0.4em / 0.4em;
+    -webkit-border-radius: 0.4em 0.4em;
+    border-radius: 0.4em / 0.4em;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    overflow: hidden;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+.dropOut ul {
+    padding: .3em 0;
+    margin: 0;
+}
+
+.dropOut li {
+    text-align: left;
+    width: 100%;
+    padding: 0.6em 0;
+    color: gray;
+    border-left: 3px solid #f7f7f7;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+.dropOut li span {
+    color: #cccccc;
+    margin: 0 1.5em 0 .8em;
+}
+.dropOut li:hover {
+    border-color: #ffc568;
+    color: #4d4d4d;
+    background: #ededed;
+}
+.dropOut li:hover span {
+    color: gray;
+}
+
+#menu-superior ul li:hover .triangle {
+    opacity: 1;
+}
+
+#menu-superior ul li:hover .dropdownContain {
+    top: 30px;
+}
+
+#menu-superior ul li:hover .dropOut {
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.orange-txt {
+    background-color: #ffb135;
+    -webkit-transition: background 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+}
+.orange-txt:hover {
+    background-color: #FF9D00;
+    -webkit-transition: background 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+}
+
+.box-shadow-menu {
+    position: relative;
+    padding-left: 1.40em;
+    margin-right: -9px;
+    /* margin-top: 10px; */
+    padding-top: 0px;
+    /* margin-bottom: 200px; */
+}
+.box-shadow-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.623em;
+    width: 1em;
+    height: 0.15em;
+    background: #fff;
+    box-shadow: 0 0.25em 0 0 #fff,
+        0 0.5em 0 0 #fff;
+}
+

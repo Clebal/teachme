@@ -1,0 +1,19 @@
+{
+  "version": "1",
+  "name": "Teach Me",
+  "description": "Teach Me es una aplicación con la que podrás organizar tus estudios de una manera facil e intuitiva, todo desde tu smartphone Firefox OS.",
+  "launch_path": "http://www.sukafelito.tk/teachme/index.php",
+  "icons": {
+    "32": "img/icon60.png",
+    "60": "img/icon60.png",
+    "90": "img/icon60.png",
+    "120": "img/icon60.png",
+    "128": "img/icon60.png",
+    "256": "img/icon60.png"
+  },
+  "developer": {
+    "name": "Sukafe",
+    "url": "http://www.sukafe.com/"
+  },
+  "default_locale": "es"
+}

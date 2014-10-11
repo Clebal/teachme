@@ -1,0 +1,13 @@
+#main{
+
+    width: calc(100% - 54px);
+    height: 100%;
+    position: fixed;
+    display: inline-block;
+    background: #ededed;
+    float: right;
+    margin-left: 56px;
+    z-index: -9999;
+    overflow: auto;
+
+}
