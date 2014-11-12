@@ -2,22 +2,16 @@
 
 include ("../../resources/conexion.php");
 
+session_start();
 
-$query = mysqli_query($link,"SELECT * FROM notas") or die(mysqli_error());
+$nombre = $_SESSION['nombre'];
+
+$query = mysqli_query($link,"SELECT * FROM notas WHERE user = '$nombre' ");
 
 ?>
 
 <head>
-
-    <meta charset="ISO-8859-1">
-
     <style>
-
-        *{
-
-            color: black;
-
-        }
 
         .div_container{
 
@@ -71,15 +65,21 @@ $query = mysqli_query($link,"SELECT * FROM notas") or die(mysqli_error());
 
             content: "X";
             font-weight: bold;
-            color: red;
+            color: white;
             text-shadow: 0px 0px 1px gray;
             position: absolute;
-            right: 0;
-            margin-right: 10px;
-            margin-top: 5px;
+            right: 6px;
+            background: red;
+            padding: 5px 10px 5px 8px;
 
         }
 
+        p{
+         
+            color: black;
+            
+        }
+        
     </style>
 
 </head>
@@ -91,9 +91,7 @@ $query = mysqli_query($link,"SELECT * FROM notas") or die(mysqli_error());
 
     </div>
 
-    <div id="registrar_valor" style="margin-top: 22px;">
-
-    </div>
+    <div id="registrar_valor" style="margin-top: 22px;"></div>
 
     <?php 
 

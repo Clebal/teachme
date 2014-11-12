@@ -104,6 +104,10 @@
     content: "\f118";
 }
 
+.fa-play:before {
+    content: "\f04b";
+}
+
 .icon-sad:before {
     content: "\f118";
 }
@@ -131,6 +135,7 @@
 .icon-write2:before {
     content: "\f044";
 }
+    
 
 .icon-write:before {
     content: "\f040";

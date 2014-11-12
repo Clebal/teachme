@@ -133,6 +133,8 @@
     -webkit-transition: background 0.1s ease-in-out;
     -moz-transition: background 0.1s ease-in-out;
     transition: background 0.1s ease-in-out;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .orange-txt:hover {
     background-color: #FF9D00;

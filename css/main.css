@@ -11,3 +11,277 @@
     overflow: auto;
 
 }
+
+.button{
+
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: none;
+    box-sizing: content-box;
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    vertical-align: middle;
+    background: #0074D9;
+    color: #FFF;
+    border-radius: .2em;
+    cursor: pointer;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
+    height: 1.3em;
+    line-height: 1.5em;
+    padding: .3em .9em .5em;
+    margin: .3em;
+    box-shadow: inset 0 0 0 100em transparent,inset 0 -.2em rgba(0,0,0,.3);
+
+}
+
+.button:hover {
+
+    color: #FFF;
+    line-height: 1.4em; 
+    margin: 0.6em 0.5em 0.5em; 
+    color: #FFF;
+    -webkit-transition: all 0.1s ease, box-shadow 0s ease;
+    transition: all 0.1s ease, box-shadow 0s ease;
+    box-shadow: inset 0 0 0 100em rgba(0, 0, 0, 0.1);
+    margin: 0.4em 0.3em 0.3em;
+    padding: 0.3em 0.9em 0.4em;
+    box-shadow: inset 0 0 0 1000em rgba(0, 0, 0, 0.1), inset 0 -0.1em rgba(0, 0, 0, 0.3); 
+
+}
+
+.button:active{
+
+    margin: 0.7em 0.5em 0.5em; 
+    box-shadow: inset 0 0 0 100em rgba(0, 0, 0, 0.3);
+    margin: 0.5em 0.3em 0.3em;
+    padding: 0.3em 0.9em;
+    box-shadow: inset 0 0 0 1000em rgba(0, 0, 0, 0.3), inset 0 0.1em 0.1em rgba(0, 0, 0, 0.3); 
+
+}
+
+.button_close{
+
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: none;
+    box-sizing: content-box;
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    vertical-align: middle;
+    background: #E80000;
+    color: #FFF;
+    border-radius: .2em;
+    cursor: pointer;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
+    height: 1.3em;
+    line-height: 1.5em;
+    padding: .3em .9em .5em;
+    margin: .3em;
+    box-shadow: inset 0 0 0 100em transparent,inset 0 -.2em rgba(0,0,0,.3);
+
+}
+
+.button_close:hover {
+
+    color: #FFF;
+    line-height: 1.4em; 
+    margin: 0.6em 0.5em 0.5em; 
+    -webkit-transition: all 0.1s ease, box-shadow 0s ease;
+    transition: all 0.1s ease, box-shadow 0s ease;
+    box-shadow: inset 0 0 0 100em rgba(0, 0, 0, 0.1);
+    margin: 0.4em 0.3em 0.3em;
+    padding: 0.3em 0.9em 0.4em;
+    box-shadow: inset 0 0 0 1000em rgba(0, 0, 0, 0.1), inset 0 -0.1em rgba(0, 0, 0, 0.3); 
+
+}
+
+.button_close:active{
+
+    margin: 0.7em 0.5em 0.5em; 
+    box-shadow: inset 0 0 0 100em rgba(0, 0, 0, 0.3);
+    margin: 0.5em 0.3em 0.3em;
+    padding: 0.3em 0.9em;
+    box-shadow: inset 0 0 0 1000em rgba(0, 0, 0, 0.3), inset 0 0.1em 0.1em rgba(0, 0, 0, 0.3); 
+
+}
+
+.button_sign{
+
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: none;
+    box-sizing: content-box;
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    vertical-align: middle;
+    background: #00D966;
+    color: #FFF;
+    border-radius: .2em;
+    cursor: pointer;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
+    height: 1.3em;
+    line-height: 1.5em;
+    padding: .3em .9em .5em;
+    margin: .3em;
+    box-shadow: inset 0 0 0 100em transparent,inset 0 -.2em rgba(0,0,0,.3);
+
+}
+
+.button_sign:hover {
+
+    color: #FFF;
+    line-height: 1.4em; 
+    margin: 0.6em 0.5em 0.5em; 
+    -webkit-transition: all 0.1s ease, box-shadow 0s ease;
+    transition: all 0.1s ease, box-shadow 0s ease;
+    box-shadow: inset 0 0 0 100em rgba(0, 0, 0, 0.1);
+    margin: 0.4em 0.3em 0.3em;
+    padding: 0.3em 0.9em 0.4em;
+    box-shadow: inset 0 0 0 1000em rgba(0, 0, 0, 0.1), inset 0 -0.1em rgba(0, 0, 0, 0.3); 
+
+}
+
+.button_sign:active{
+
+    margin: 0.7em 0.5em 0.5em; 
+    box-shadow: inset 0 0 0 100em rgba(0, 0, 0, 0.3);
+    margin: 0.5em 0.3em 0.3em;
+    padding: 0.3em 0.9em;
+    box-shadow: inset 0 0 0 1000em rgba(0, 0, 0, 0.3), inset 0 0.1em 0.1em rgba(0, 0, 0, 0.3); 
+
+}
+
+*:focus{
+
+    outline: 0px;
+
+}
+
+.input{
+
+    padding: 0;
+    float: none;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: 0 0;
+    border-bottom: 1px solid #757575;
+    font-size: 17.5px;
+
+}
+
+
+
+
+
+
+
+
+
+<!-- Input file -->
+
+#cabinet0 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 25px;
+}
+
+div.si label.cabinet input {
+
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+
+}
+
+div.si div.uploadButton {
+    position: relative;
+    float: left;
+}
+
+div.si div.uploadButton div {
+    width: 30px;
+    height: 30px;
+    background: url(../img/profile.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    z-index: -1000;
+}
+
+div.si label.selectedFile {
+
+    margin-left: 5px;
+    line-height: 30px;
+    font-size: 20px;
+    border-bottom: 1px solid #757575;
+
+}
+
+
+
+
+
+
+
+<!-- -->
+
+.mensaje{
+
+    -webkit-animation: myfirst 3s; /* Chrome, Safari, Opera */
+    animation: myfirst 3s;
+
+    background: rgb(255, 255, 255);
+    height: 100%;
+
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {background: rgba(26, 158, 226, 1);}
+    to {background: white}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {background: rgba(26, 158, 226, 1);}
+    to {background:white;}
+}
+
+h1, h2, h3, h4, h5, h6, p{
+
+    color: black;
+
+}
+
+#fade,
+#fade_wrapper,
+#fade_background {
+    transition: all 0.3s;
+}
+
+#my_popup, #basic{
+
+    min-height: 20px;
+    padding: 30px;
+    width: 70%;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 2px;  
+
+}

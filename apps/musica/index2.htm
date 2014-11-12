@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script src="apps/musica/js/player.js"></script>
+        <link href="apps/musica/css/style.css" type="text/css" rel="stylesheet">
+        <style>
+
+            #timer{
+
+                display: block;
+                margin: auto;
+                height: 20px;
+
+            }
+            
+            canvas{
+
+                display: block;
+                width: 100%;
+                border: 1px solid #fff;
+                border-radius: 50px;
+
+            }
+
+            @media screen and (max-width: 363px) { 
+
+                canvas {
+
+                    width: 250px;
+
+                }
+
+            }
+            
+            @media screen and (max-width: 313px) { 
+
+                canvas {
+
+                    width: 225px;
+
+                }
+
+            }
+
+
+            .playpause_control{
+
+                text-align:center;
+                color: white;
+                font-size: 30px;
+
+            }
+
+            .playpause_control:hover{
+
+                text-align:center;
+                color: white;
+                font-size: 30px;
+
+            }
+
+
+            .audio_control{
+
+                font-size: 25px;
+
+            }
+
+            .audio_control:hover{
+
+                color: white;
+
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <section style="text-align: center; background: url('http://www.scottshephard.com/wp-content/uploads/2011/10/2011-10-11-Moonset-Over-Iowa-Corn.jpg'); height: 100%; background-position: center">
+
+            <!--<span id="duration">00:00:00</span>-->
+
+            <audio id="player" preload="auto">
+
+                <source src="apps/musica/audio/audio.mp3"></source>
+
+            <!-- Si tuviésemos la fuente en ogg, la pondríamos aquí -->
+
+            </audio>
+        <br><br><br>
+        <canvas id="timer" height="15"></canvas>
+        <br>
+        <span id="currentTime" style="color: white;">00:00:00</span>
+        <br><br><br><br><br>
+
+        <a href="#" id="play" class="playpause_control fa-play"></a>
+
+        <a href="#" id="pause" class="playpause_control fa-pause" style="display:none"></a>
+
+        <br><br><br><br><br>
+
+        <a href="#" id="volUp" class="audio_control fa-volume-up"></a>
+        <span id="vol" style="color: white; padding: 20px;"></span> 
+        <a href="#" id="volDown" class="audio_control fa-volume-down" style="font-size: 30px;"></a>
+
+        </section>
+
+
+    </body>
+</html>

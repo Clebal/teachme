@@ -1,51 +1,71 @@
-
-
-<head>
-
-    <link href="apps/horario/horario.css" rel="stylesheet" type="text/css">
-    <meta charset="iso-8859-1">
-    <style>
-
-        *{
-
-            color: black;
-
-        }
-
-        td{
-         
-            padding-top: 10px;
-            padding-bottom: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-        
-        th{
-         
-            height: 30px;
-            text-align: center;
-            
-        }
-
-    </style>
-
-</head>
-<body>
 <?php
 
 include("../../resources/conexion.php");
 
-$query_lunes = mysqli_query($link,"SELECT lunes FROM horario");
-
-while($row = mysqli_fetch_array($query_lunes)){
- 
-    foreach ($row as $hola)
-    
-    echo $hola;
-    
-}
-
 ?>
+
+<head>
+    
+    <script>
+        jQuery.fn.cargar3 = function(url) {
+            $(document).ready(function(){
+                $("#registrar_tabla").load(url);
+            });
+        };
+    </script>
+    
+    <link href="apps/horario/horario.css" rel="stylesheet" type="text/css">
+    
+    <style>
+    
+        table{
+         
+            color: black;
+            
+        }
+    
+    </style>
+    
+</head>
+
+<body>
+
+    <?php
+
+session_start();
+
+$nombre = $_SESSION['nombre'];
+
+if ($result = mysqli_query($link, "SELECT lunes FROM horario WHERE user = '$nombre'")) {
+
+    /* determinar el número de filas del resultado */
+    $numero = mysqli_num_rows($result);
+
+    if($numero == 0){
+
+    ?>
+
+    <div class="text-center">
+
+        <br>
+
+        <a class="button" onclick="$('#registrar_tabla').cargar3('apps/horario/crear/index.php');">Crear Horario</a>
+
+    </div>
+
+    <br>
+
+    <div id="registrar_tabla"></div>
+
+    <?php
+
+    }else{
+
+        $query_uno = mysqli_query($link,"SELECT lunes, martes, miercoles FROM horario WHERE user = '$nombre'");
+        $query_dos = mysqli_query($link,"SELECT jueves, viernes FROM horario WHERE user = '$nombre'");
+
+    ?>
+
     <table class="primary" style="width: 100%;">
 
         <thead>
@@ -62,69 +82,27 @@ while($row = mysqli_fetch_array($query_lunes)){
 
         <tbody>
 
+            <?php
+
+        while($row = mysqli_fetch_array($query_uno)){
+
+            ?>
+
             <tr>
 
-                <td>Orientación </td>
+                <td><?php echo $row['lunes']; ?></td>
 
-                <td>Orientación </td>
+                <td><?php echo $row['martes']; ?></td>
 
-                <td>Orientación </td>
-
-            </tr>
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
+                <td><?php echo $row['miercoles']; ?></td>
 
             </tr>
 
-            
-            <tr>
+            <?php
 
-                <td>Orientación </td>
+        }
 
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
-
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
-
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
-
+            ?>
 
         </tbody>
 
@@ -144,59 +122,38 @@ while($row = mysqli_fetch_array($query_lunes)){
 
         <tbody>
 
+            <?php
+
+        while($row = mysqli_fetch_array($query_dos)){
+
+            ?>
+
             <tr>
 
-                <td>Orientación </td>
+                <td><?php echo $row['jueves']; ?></td>
 
-                <td>Orientación </td>
-                
-            </tr>
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
+                <td><?php echo $row['viernes']; ?></td>
 
             </tr>
 
-            
-            <tr>
+            <?php
 
-                <td>Orientación </td>
+        }
 
-                <td>Orientación </td>
-
-            </tr>
-
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
-
-            
-            <tr>
-
-                <td>Orientación </td>
-
-                <td>Orientación </td>
-
-            </tr>
+            ?>
 
         </tbody>
 
     </table>
 
+
+
 </body>
+
+<?php
+
+    }
+
+}
+
+?>
