@@ -1,15 +1,11 @@
-<!DOCTYPE HTML>
-<head>
-
-    <meta charset="iso-8859-1">
-    
-</head>
 
 <?php
 
 include ("../../../resources/conexion.php");
 
 $nombre = $_POST["nombre"];
+
+echo $nombre;
 
 session_start();
 

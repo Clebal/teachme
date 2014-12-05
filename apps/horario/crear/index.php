@@ -110,12 +110,12 @@
                 <input id="check1" type="checkbox">
                 <label for="check1">Lunes</label>
                 <div class="texto">
-                    <input type="text" name="lunes1">
-                    <input type="text" name="lunes2">
-                    <input type="text" name="lunes3">
-                    <input type="text" name="lunes4">
-                    <input type="text" name="lunes5">
-                    <input type="text" name="lunes6">
+                    <input type="text" name="lunes1" required>
+                    <input type="text" name="lunes2" required>
+                    <input type="text" name="lunes3" required>
+                    <input type="text" name="lunes4" required>
+                    <input type="text" name="lunes5" required>
+                    <input type="text" name="lunes6" required>
                     <br><br>
                 </div>
             </div>
@@ -123,56 +123,60 @@
                 <input id="check2" type="checkbox">
                 <label for="check2">Martes</label>
                 <div class="texto">
-                    <input type="text" name="martes1">
-                    <input type="text" name="martes2">
-                    <input type="text" name="martes3">
-                    <input type="text" name="martes4">
-                    <input type="text" name="martes5">
-                    <input type="text" name="martes6">
+                    <input type="text" name="martes1" required>
+                    <input type="text" name="martes2" required>
+                    <input type="text" name="martes3" required>
+                    <input type="text" name="martes4" required>
+                    <input type="text" name="martes5" required>
+                    <input type="text" name="martes6" required>
                 </div>
             </div>
             <div>
                 <input id="check3" type="checkbox">
                 <label for="check3">Miercoles</label>
                 <div class="texto">
-                    <input type="text" name="miercoles1">
-                    <input type="text" name="miercoles2">
-                    <input type="text" name="miercoles3">
-                    <input type="text" name="miercoles4">
-                    <input type="text" name="miercoles5">
-                    <input type="text" name="miercoles6">
+                    <input type="text" name="miercoles1" required>
+                    <input type="text" name="miercoles2" required>
+                    <input type="text" name="miercoles3" required>
+                    <input type="text" name="miercoles4" required>
+                    <input type="text" name="miercoles5" required>
+                    <input type="text" name="miercoles6" required>
                 </div>
             </div>
             <div>
                 <input id="check4" type="checkbox">
                 <label for="check4">Jueves</label>
                 <div class="texto">
-                    <input type="text" name="jueves1">
-                    <input type="text" name="jueves2">
-                    <input type="text" name="jueves3">
-                    <input type="text" name="jueves4">
-                    <input type="text" name="jueves5">
-                    <input type="text" name="jueves6">
+                    <input type="text" name="jueves1" required> 
+                    <input type="text" name="jueves2" required>
+                    <input type="text" name="jueves3" required>
+                    <input type="text" name="jueves4" required>
+                    <input type="text" name="jueves5" required>
+                    <input type="text" name="jueves6" required>
                 </div>
             </div>
             <div>
                 <input id="check5" type="checkbox">
                 <label for="check5">Viernes</label>
                 <div class="texto">
-                    <input type="text" name="viernes1">
-                    <input type="text" name="viernes2">
-                    <input type="text" name="viernes3">
-                    <input type="text" name="viernes4">
-                    <input type="text" name="viernes5">
-                    <input type="text" name="viernes6">
+                    <input type="text" name="viernes1" required>
+                    <input type="text" name="viernes2" required>
+                    <input type="text" name="viernes3" required>
+                    <input type="text" name="viernes4" required>
+                    <input type="text" name="viernes5" required>
+                    <input type="text" name="viernes6" required>
                 </div>
             </div>
         </div>
         <br>
 
-        <div class="text-center">
+        <div style="display: block; text-align: center;">
 
-            <input type="submit" class="button">
+            <div class="button">
+
+                <input type="submit" value="Enviar" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;">
+
+            </div>
 
         </div>
 

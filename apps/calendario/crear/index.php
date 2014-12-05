@@ -55,15 +55,24 @@
     <div class="div_container2">
         <form action="apps/calendario/crear/enviar.php" method="post">
 
-            <label>Fecha</label><br>
-            <input type="date" name="fecha">
+            <label style="font-size: 20px;">Fecha</label><br>
+            <input type="date" name="fecha" required>
 
             <br><br>
 
-            <label>Asunto</label><br>
-            <input type="text" name="asunto">
+            <label style="font-size: 20px;">Asunto</label><br>
+            <input type="text" class="input" style="font-size: 15px;" name="asunto" required>
             <br><br>
-            <input type="submit" value="Enviar">
+
+            <div style="display: block; text-align: center;">
+
+                <div class="button">
+
+                    <input type="submit" value="Enviar" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;">
+
+                </div>
+
+            </div>
 
 
         </form>

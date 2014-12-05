@@ -178,12 +178,11 @@ $query = mysqli_query($link,"SELECT * FROM calendario WHERE user = '$nombre'") o
 
             content: "X";
             font-weight: bold;
-            color: red;
+            color: white;
             text-shadow: 0px 0px 1px gray;
             position: absolute;
-            right: 0;
             margin-right: 10px;
-            margin-top: 5px;
+            margin-left: 3px;
 
         }
 
@@ -207,7 +206,6 @@ $query = mysqli_query($link,"SELECT * FROM calendario WHERE user = '$nombre'") o
 //echo fechaesp($date, "mes"); // para imprimir el mes
 //echo fechaesp($date, "anio"); // para imprimir el año
 
-$query = mysqli_query($link,"SELECT * FROM calendario");
 
 while($row = mysqli_fetch_array($query)){
 
@@ -218,6 +216,8 @@ while($row = mysqli_fetch_array($query)){
     <div class="div_container">
 
         <div class="div_blue">
+
+            <a href="apps/calendario/borrar.php?id=<?php echo $row['id']; ?>"><div id="borrar"></div></a>
 
             <div class="div_dia">
 
@@ -241,7 +241,7 @@ while($row = mysqli_fetch_array($query)){
 
         <div class="div_asunto">
 
-            <p><?php echo $row['asunto']; ?></p>
+            <p style="padding-bottom: 15px;"><?php echo $row['asunto']; ?></p>
 
         </div>
 
@@ -252,7 +252,7 @@ while($row = mysqli_fetch_array($query)){
 }
 
     ?>
-    
+
     <br><br>
 
     <!--<?php

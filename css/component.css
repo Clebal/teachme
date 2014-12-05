@@ -100,6 +100,11 @@
     content: "\f128";
 }
 
+.icon-email:before {
+    content: "@";
+}
+
+
 .icon-smile:before {
     content: "\f118";
 }
@@ -135,7 +140,7 @@
 .icon-write2:before {
     content: "\f044";
 }
-    
+
 
 .icon-write:before {
     content: "\f040";

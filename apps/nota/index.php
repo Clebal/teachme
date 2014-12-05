@@ -11,6 +11,9 @@ $query = mysqli_query($link,"SELECT * FROM notas WHERE user = '$nombre' ");
 ?>
 
 <head>
+
+    <meta charset="utf-8">
+
     <style>
 
         .div_container{
@@ -61,25 +64,24 @@ $query = mysqli_query($link,"SELECT * FROM notas WHERE user = '$nombre' ");
 
         }
 
-        #borrar:before{
+        #borrar2:before{
 
             content: "X";
             font-weight: bold;
-            color: white;
+            color: red;
             text-shadow: 0px 0px 1px gray;
             position: absolute;
-            right: 6px;
-            background: red;
-            padding: 5px 10px 5px 8px;
+            right: 15px;
+            padding: 25px 10px 5px 8px;
 
         }
 
         p{
-         
+
             color: black;
-            
+
         }
-        
+
     </style>
 
 </head>
@@ -100,7 +102,7 @@ while($row = mysqli_fetch_array($query)){
     ?>
 
     <div class="div_container">
-        <a href="apps/nota/borrar.php?id=<?php echo $row['id']; ?>"><div id="borrar"></div></a>
+        <a href="apps/nota/borrar.php?id=<?php echo $row['id']; ?>"><div id="borrar2"></div></a>
         <p class="div_title"><?php echo $row["nombre_asignatura"]; ?></p>
 
         <p class="div_description"><?php echo $row["nota_asignatura"]; ?></p>

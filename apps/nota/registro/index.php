@@ -1,6 +1,18 @@
+<?php
+
+include("../../../resources/conexion.php");
+
+session_start();
+
+$nombre = $_SESSION['nombre'];
+
+$query = mysqli_query($link,"SELECT nombre FROM asignaturas WHERE user = '$nombre'");
+
+?>
+
 <head>
-    
-    <meta charset="iso-8859-1">
+
+    <meta charset="utf-8">
 
     <style>
 
@@ -41,11 +53,11 @@
             padding: 20px;
 
         }
-        
+
         label{
-         
+
             color: black;
-            
+
         }
 
     </style>
@@ -53,23 +65,46 @@
 </head>
 
 <body>
-    
+
     <div class="div_container2">
-        
+
         <form action="apps/nota/registro/enviar.php" method="post">
 
-            <label>Asignatura</label><br>
-            <input type="text" name="nombre" required>
+            <label style="font-size: 20px;">Asignatura</label><br><br>
+            <select name="nombre">
+                <?php
+
+while($while = mysqli_fetch_assoc($query)){
+
+    foreach($while as $nombres){
+
+        echo "<option value='$nombres'>".$nombres."</option>";
+
+    }
+
+}
+
+                ?>
+            </select>
 
             <br><br>
 
-            <label>Nota</label><br>
-            <input type="text" name="valor" required>
+            <label style="font-size: 20px;">Nota</label><br><br>
+            <input type="text" class="input" style="font-size: 15px;" name="asunto" required>
             <br><br>
-            <input type="submit" value="Enviar">
+
+            <div style="display: block; text-align: center;">
+
+                <div class="button">
+
+                    <input type="submit" value="Enviar" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;">
+
+                </div>
+
+            </div>
 
         </form>
-        
+
     </div>
-    
+
 </body>

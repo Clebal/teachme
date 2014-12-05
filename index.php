@@ -11,7 +11,7 @@ include ("resources/conexion.php");
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-        <title>Teach Me - SDT</title>
+        <title>Teach Me</title>
 
         <!-- Menú Lateral -->
 
@@ -62,11 +62,11 @@ include ("resources/conexion.php");
                 from {color: white}
                 to {color: #1A9EE2;}
             }
-            
+
             .main{
-             
+
                 overflow: hidden;
-                
+
             }
 
         </style>
@@ -79,6 +79,12 @@ session_start();
 
 if(isset($_SESSION['nombre'])){
 
+    $nombre = $_SESSION['nombre'];
+
+    $query = mysqli_query($link, "SELECT * FROM usuarios WHERE name = '$nombre'");
+
+    $row = mysqli_fetch_array($query);
+
     ?>
 
     <body>
@@ -88,20 +94,18 @@ if(isset($_SESSION['nombre'])){
                 <li class="drop">
 
                     <div class="user-avatar">
-                        <img src="https://lh4.googleusercontent.com/-miJ4f0bUmDY/AAAAAAAAAAI/AAAAAAAAAAA/lsy2nCXjb1k/s32-c/photo.jpg" alt="">
+                        <img src="<?php echo $row['avatar']; ?>" width="32" height="32" alt="">
                     </div>
-                    <a href="#">Sergio Clebal</a>
+                    <a href="#"><?php echo $row['name']; ?></a>
 
                     <div aria-hidden="true" class="icon-reorder orange-txt"><span class="box-shadow-menu"></span></div>
                     <div class="triangle"></div>
-
 
                     <div class="dropdownContain">
                         <div class="dropOut">
                             <ul>
                                 <li onclick="$('#main').cargar('apps/profile/index.php');">&nbsp;&nbsp;&nbsp;Ver perfil</li>
-                                <li>&nbsp;&nbsp;&nbsp;Configuraci&oacute;n</li>
-                                <li>&nbsp;&nbsp;&nbsp;Cr&eacute;ditos</li>
+                                <li onclick="$('#main').cargar('apps/config/index.php');">&nbsp;&nbsp;&nbsp;Configuraci&oacute;n</li>
                                 <li><a href="resources/cerrar.php" style="line-height: 0em; padding: 0em; font-size: 15px; color: gray;">&nbsp;&nbsp;&nbsp;Cerrar Sesi&oacute;n</a></li>
                             </ul>
                         </div>
@@ -114,14 +118,16 @@ if(isset($_SESSION['nombre'])){
         <nav id="menu-lateral">
             <ul class="cbp-vimenu">
                 <li><a href="#" class="icon-logo">Logo</a></li>
-                <li><a href="apps/notas/www/index.html" class="icon-write">Add Notes</a></li>
+                <!--<li><a href="apps/notas/www/index.html" class="icon-write">Add Notes</a></li>-->
                 <li><a href="#" class="icon-music" onclick="$('#main').cargar('apps/musica/index.html');">Music</a></li>
                 <li><a href="#" class="icon-book" onclick="$('#main').cargar('apps/nota/index.php');">Notas</a></li>
                 <!-- Example for active item:<li class="cbp-vicurrent"><a href="#" class="icon-pencil">Pencil</a></li>-->
                 <li><a href="#" class="icon-horario" onclick="$('#main').cargar('apps/horario/index.php');">Horario</a></li>
                 <li><a href="#" class="icon-calendar" onclick="$('#main').cargar('apps/calendario/index.php');">Calendar</a></li>
-                <li><a href="#" class="icon-ask2">Ask</a></li>
+                <!--<li><a href="#" class="icon-ask2">Ask</a></li>-->
                 <li><a href="#" class="icon-smile" onclick="$('#main').cargar('apps/powered/index.html');">Addons Utilizados</a></li>
+                <li><a href="#" class="icon-email" onclick="$('#main').cargar('apps/contacto/index.php');">Contacto</a></li>
+
             </ul>
         </nav>
 
@@ -129,7 +135,19 @@ if(isset($_SESSION['nombre'])){
 
             <?php
 
-    if(isset($_GET['m'])){ if($_GET['m'] == 0){ echo "<div class='mensaje'></div>";}}
+    if(isset($_GET['m'])){ if($_GET['m'] == 0){ echo "<div class='mensaje'></div>";}}else{
+
+            ?>
+
+            <p style="text-align: center; vertical-align: center">
+
+                Made with ❤ by Sukafe
+
+            </p>
+
+            <?php
+
+    }
 
             ?>
 
@@ -141,6 +159,8 @@ if(isset($_SESSION['nombre'])){
         <script>
             jQuery.fn.cargar = function(url) {
                 $(document).ready(function(){
+
+                    $('#main').html('<div class="cargando"></div>');
                     $("#main").load(url);
                 });
             };
@@ -167,6 +187,18 @@ if(isset($_SESSION['nombre'])){
     ?>
 
     <body>
+
+        <?php
+
+    if(isset($_GET['m'])){
+
+        $texto = base64_decode($_GET['m']);
+
+        echo "<div style='width: 100%; height: auto; background: dodgerblue; color: white; text-align: center; box-shadow: 0px 0px 1px black;'><p style='color: white; margin: 0; padding-top: 10px; padding-bottom: 10px;'>$texto</p></div>";
+
+    }
+
+        ?>
 
         <header>
 
@@ -200,6 +232,12 @@ if(isset($_SESSION['nombre'])){
 
         </section>
 
+        <div style="text-align: center; font-weight: 300; font-family: 'lato'; text-align: center; text-shadow: 1px 1px 5px black; color: white;" class="forget_open">
+
+            <small>He olvidado mi usuario o contraseña</small>
+
+        </div>
+
         <br><br>
 
         <footer style="text-align: center; font-weight: 300; font-family: 'lato'; text-align: center; text-shadow: 1px 1px 5px black; color: white;">
@@ -213,12 +251,14 @@ if(isset($_SESSION['nombre'])){
 
             <form method="post" action="resources/login.php">
 
-                <input type="text" name="username" class="input" placeholder="Usuario o Email" autocomplete="off"><br><br>
+                <input type="text" name="username" class="input" placeholder="Usuario o Email" autocomplete="off" required><br><br>
 
-                <input type="password" name="password" class="input" placeholder="Contraseña"><br><br>
+                <input type="password" name="password" class="input" placeholder="Contraseña" required><br><br>
 
                 <div class="button" style="float: right;">
+
                     <input type="submit" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;" value="Enviar">
+
                 </div>
 
             </form>
@@ -231,28 +271,58 @@ if(isset($_SESSION['nombre'])){
         <!-- Registro - PopUp -->
         <div id="basic">
 
-            <form>
+            <form action="resources/registrar.php" method="post" enctype="multipart/form-data">
 
-                <input type="text" name="" class="input" placeholder="Usuario"><br><br>
+                <input type="text" name="user" class="input" placeholder="Usuario" required><br><br>
 
-                <input type="password" name="" class="input" placeholder="Contraseña"><br><br>
+                <input type="password" name="password" class="input" placeholder="Contraseña" required><br><br>
 
-                <input type="email" name="" class="input" placeholder="Email"><br><br>
+                <input type="text" name="name" class="input" placeholder="Nombre real" required><br><br>
 
-                <input type="date" name="" class="input" placeholder="12/02/1997"><br><br>
+                <input type="email" name="email" class="input" placeholder="Email" required><br><br>
 
-                <input type="file" name="file">
+                <input type="date" name="fecha_nacimiento" class="input" placeholder="Fecha de nacimiento" required><br><br>
+
+                <input type="text" name="pais" class="input" placeholder="País" required><br><br>
+
+                <input type="text" name="curso" class="input" placeholder="Curso" required><br><br>
+
+                <input type="file" id="files" name="imagen" placeholder="Imagen de perfil" required>
 
                 <br><br>
 
                 <div class="button" style="float: right;">
-                    <input type="submit" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;" value="Enviar">
+
+                    <input type="submit" name="subir" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;" value="Enviar">
+
                 </div>
 
             </form>
 
             <!-- Add an optional button to close the popup -->
             <a href="#" class="basic_close button_close">Cerrar</a>
+
+        </div>
+        
+        <div id="forget">
+
+            <form action="resources/forget.php" method="post">
+
+                <label>Escriba la dirección de correo electrónico que utilizó cuando se registró en Teach Me:</label><br><br>
+
+                <input type="email" name="email" class="input" placeholder="Email" required><br><br>
+
+
+                <div class="button" style="float: right;">
+
+                    <input type="submit" name="subir" style="width: 100%; background: 0; border: 0; color: white; font-size: 17px;" value="Enviar">
+
+                </div>
+
+            </form>
+
+            <!-- Add an optional button to close the popup -->
+            <a href="#" class="forget_close button_close">Cerrar</a>
 
         </div>
 
@@ -281,6 +351,19 @@ if(isset($_SESSION['nombre'])){
 
                 // Initialize the plugin
                 $('#basic').popup(
+                    {
+                        transition: 'all 0.3s',
+                        scrolllock: true // optional
+                    });
+
+            });
+        </script>
+        
+        <script>
+            $(document).ready(function() {
+
+                // Initialize the plugin
+                $('#forget').popup(
                     {
                         transition: 'all 0.3s',
                         scrolllock: true // optional
